@@ -13,12 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/socket', function () {
+    return view('socket');
+});
 
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::resource('users', 'UserController');
+
+Route::get('/t', function () {
+    event(new \App\Events\SendMessage());
+    dd('Event Run Successfully.');
+});
