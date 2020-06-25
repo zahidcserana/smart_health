@@ -4,7 +4,7 @@
 /storage/*.key
 
 vendor/*
-!vendor/laravel/ui/auth-backend/*
+**/vendor/laravel/ui/auth-backend/RegistersUsers.php!
 
 .env
 .env.backup
