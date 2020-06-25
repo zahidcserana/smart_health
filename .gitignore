@@ -3,8 +3,8 @@
 /public/storage
 /storage/*.key
 
-vendor/*
-**/vendor/laravel/ui/auth-backend/RegistersUsers.php!
+/vendor
+**/vendor/laravel/ui/auth-backend/RegistersUsers.php !
 
 .env
 .env.backup
