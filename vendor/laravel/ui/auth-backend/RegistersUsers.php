@@ -33,7 +33,11 @@ trait RegistersUsers
 
         event(new Registered($user = $this->create($request->all())));
 
-        return redirect('users')->with('status', 'User successfully created!');
+        if (Auth::user()) {
+            return redirect('users')->with('status', 'User successfully created!');
+        }
+        return redirect('login')->with('status', 'Registration successfully completed!');
+
 
         $this->guard()->login($user);
 
